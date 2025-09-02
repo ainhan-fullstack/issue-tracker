@@ -4,7 +4,7 @@ import ErrorMessage from "@/app/components/ErrorMessage";
 import Spinner from "@/app/components/Spinner";
 import { Issue } from "@/app/generated/prisma";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Callout, TextField } from "@radix-ui/themes";
+import { Button, Callout, Select, TextField } from "@radix-ui/themes";
 import axios from "axios";
 import "easymde/dist/easymde.min.css";
 import dynamic from "next/dynamic";
@@ -58,6 +58,31 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
           {...register("title")}
         ></TextField.Root>
         <ErrorMessage>{errors.title?.message}</ErrorMessage>
+        {issue && (
+          <div className="my-5">
+            <Controller
+              name="status"
+              control={control}
+              defaultValue={issue?.status}
+              render={({ field }) => (
+                <Select.Root
+                  defaultValue={issue.status}
+                  onValueChange={field.onChange}
+                >
+                  <Select.Trigger />
+                  <Select.Content>
+                    <Select.Group>
+                      <Select.Label>Status</Select.Label>
+                      <Select.Item value="OPEN">Open</Select.Item>
+                      <Select.Item value="IN_PROGRESS">In Progress</Select.Item>
+                      <Select.Item value="CLOSED">Closed</Select.Item>
+                    </Select.Group>
+                  </Select.Content>
+                </Select.Root>
+              )}
+            />
+          </div>
+        )}
         <Controller
           name="description"
           control={control}
