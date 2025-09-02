@@ -3,7 +3,7 @@
 import { User } from "@/app/generated/prisma";
 import { Select } from "@radix-ui/themes";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const AssigneeSelect = () => {
   const [users, setUsers] = useState<User[]>([]);
