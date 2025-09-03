@@ -20,7 +20,7 @@ const NavBar = () => {
 
   const links = [
     { lable: "Dashboard", href: "/" },
-    { lable: "Issues", href: "/issues" },
+    { lable: "Issues", href: "/issues/list" },
   ];
   return (
     <nav className=" border-b mb-5 px-5 h-14 py-3">
