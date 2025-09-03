@@ -1,12 +1,12 @@
+import Pagination from "@/app/components/Pagination";
+import { Issue, Status } from "@/app/generated/prisma";
 import prisma from "@/prisma/client";
+import { ArrowUpIcon } from "@radix-ui/react-icons";
 import { Table } from "@radix-ui/themes";
+import Link from "next/link";
 import IssueStatusBadge from "../../components/IssueStatusBadge";
 import CustomLink from "../../components/Link";
 import IssueAction from "./IssueAction";
-import { Issue, Status } from "@/app/generated/prisma";
-import Link from "next/link";
-import { ArrowUpIcon } from "@radix-ui/react-icons";
-import Pagination from "@/app/components/Pagination";
 
 interface Props {
   searchParams: { status?: Status; orderBy?: keyof Issue; page: string };
@@ -40,8 +40,6 @@ const IssuesPage = async ({ searchParams }: Props) => {
   const issueCount = await prisma.issue.count({
     where: { ...(searchParams.status ? { status: searchParams.status } : {}) },
   });
-
-  console.log(issueCount);
 
   return (
     <div>

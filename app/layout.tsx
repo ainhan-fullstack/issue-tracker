@@ -1,10 +1,10 @@
+import { Container, Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { Container, Theme, ThemePanel } from "@radix-ui/themes";
-import NavBar from "./NavBar";
 import AuthProvider from "./auth/Provider";
+import "./globals.css";
+import NavBar from "./NavBar";
 import QueryClientProvider from "./QueryClientProvider";
 
 const geistSans = Geist({

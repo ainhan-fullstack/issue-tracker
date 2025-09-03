@@ -4,8 +4,8 @@ import { Issue, User } from "@/app/generated/prisma";
 import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import Skeleton from "react-loading-skeleton";
 import toast, { Toaster } from "react-hot-toast";
+import Skeleton from "react-loading-skeleton";
 
 const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   const {

@@ -1,5 +1,4 @@
 import { Button, Flex, Link } from "@radix-ui/themes";
-import React from "react";
 import IssueFilter from "./IssueFilter";
 
 const IssueAction = () => {

@@ -1,6 +1,5 @@
-import React from "react";
-import { Status } from "../generated/prisma";
 import { Badge } from "@radix-ui/themes";
+import { Status } from "../generated/prisma";
 
 const statusMap: Record<
   Status,
