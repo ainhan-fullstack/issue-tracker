@@ -1,5 +1,7 @@
 # Issue Tracker
 
+Demo video: https://youtu.be/82RzdlLmw0c
+
 A simple and efficient issue tracking system to help teams manage tasks, bugs, and feature requests. This project offers a user-friendly interface for creating, updating, and tracking issues within a project.
 
 ## Features
